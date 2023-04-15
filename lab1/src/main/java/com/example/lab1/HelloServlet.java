@@ -3,6 +3,7 @@ package com.example.lab1;
 import java.io.*;
 import java.util.HashMap;
 
+import com.example.lab1.view_models.StudentViewModel;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -15,7 +16,7 @@ public class HelloServlet extends HttpServlet {
         students.put("mhohsadze", new StudentViewModel("Mykola Hohsadze  IO-21mn", "https://i.stack.imgur.com/GsDIl.jpg"));
         students.put("dtymochko", new StudentViewModel("Dmytro Tymochko  IO-21mn", "https://i.stack.imgur.com/GsDIl.jpg"));
         students.put("dsolovyov", new StudentViewModel("Daniil Solovyov  IO-21mn", "https://i.stack.imgur.com/GsDIl.jpg"));
-        students.put("vdiachenko", new StudentViewModel("Vladyslav Diachenko  IO-21mn", "https://i.stack.imgur.com/GsDIl.jpg"));
+        students.put("vdiachenko", new StudentViewModel("Vladyslav Diachenko  IO-21mp", "https://i.stack.imgur.com/GsDIl.jpg"));
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

@@ -1,4 +1,4 @@
-package com.example.lab1;
+package com.example.lab1.view_models;
 
 public class StudentViewModel {
     private String _name;

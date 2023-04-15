@@ -12,7 +12,9 @@
     <li><a href="hello-servlet?student=mhohsadze">Mykola Hohsadze  IO-21mn</a></li>
     <li><a href="hello-servlet?student=dtymochko">Dmytro Tymochko  IO-21mn</a></li>
     <li><a href="hello-servlet?student=dsolovyov">Daniil Solovyov  IO-21mn</a></li>
-    <li><a href="hello-servlet?student=vdiachenko">Vladyslav Diachenko  IO-21mn</a></li>
+    <li><a href="hello-servlet?student=vdiachenko">Vladyslav Diachenko  IO-22mp</a></li>
+    <li><a href="book-servlet/view">Library</a></li>
+    <li><a href="book-servlet/manage">Library Manage page</a></li>
 </ul>
 </body>
 </html>
