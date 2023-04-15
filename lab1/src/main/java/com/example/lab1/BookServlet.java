@@ -8,6 +8,7 @@ import com.example.lab1.commands.book.FindByKeywordCommand;
 import com.example.lab1.commands.book.FindByTitleCommand;
 import com.example.lab1.commands.book.ViewBooksCommand;
 import com.example.lab1.services.BookService;
+import jakarta.ejb.EJB;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,7 +29,8 @@ import java.util.Map;
         ServletCommand.BOOK_VIEW_UPDATE
 })
 public class BookServlet extends HttpServlet {
-    private final BookService _bookService = new BookService();
+    @EJB
+    private BookService _bookService;
     private Map<String, ICommand> commands;
 
     @Override

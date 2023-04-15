@@ -1,10 +1,11 @@
 package com.example.lab1.services;
 
-import com.example.lab1.view_models.AuthorViewModel;
 import com.example.lab1.view_models.BookViewModel;
+import jakarta.ejb.Singleton;
 
 import java.util.ArrayList;
 
+@Singleton
 public class BookService {
     private static int _id;
     public static final ArrayList<BookViewModel> books = new ArrayList<>();
