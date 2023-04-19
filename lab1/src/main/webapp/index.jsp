@@ -14,5 +14,6 @@
     <li><a href="hello-servlet?student=dsolovyov">Daniil Solovyov  IO-21mn</a></li>
     <li><a href="hello-servlet?student=vdiachenko">Vladyslav Diachenko  IO-21mn</a></li>
 </ul>
+<a href="images/GsDIl.jpg">Text</a>
 </body>
 </html>
