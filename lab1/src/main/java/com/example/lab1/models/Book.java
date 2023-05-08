@@ -1,9 +1,9 @@
-package com.example.lab1.view_models;
+package com.example.lab1.models;
 
-public class BookViewModel {
+public class Book {
     private long id;
     private String title;
-    private AuthorViewModel author;
+    private Author author;
 
     public long get_id() {
         return id;
@@ -21,20 +21,20 @@ public class BookViewModel {
         this.title = title;
     }
 
-    public AuthorViewModel get_author() {
+    public Author get_author() {
         return author;
     }
 
-    public void set_author(AuthorViewModel author) {
+    public void set_author(Author author) {
         this.author = author;
     }
 
-    public BookViewModel(String title, AuthorViewModel author) {
+    public Book(String title, Author author) {
         this.title = title;
         this.author = author;
     }
 
-    public BookViewModel(long _id, String title) {
+    public Book(long _id, String title) {
         this.id = _id;
         this.title = title;
     }

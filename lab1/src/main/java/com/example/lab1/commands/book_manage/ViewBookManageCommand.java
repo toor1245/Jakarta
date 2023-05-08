@@ -2,7 +2,7 @@ package com.example.lab1.commands.book_manage;
 
 import com.example.lab1.commands.ICommand;
 import com.example.lab1.services.BookService;
-import com.example.lab1.view_models.BookViewModel;
+import com.example.lab1.models.Book;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -18,7 +18,7 @@ public class ViewBookManageCommand implements ICommand {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        ArrayList<BookViewModel> books = _bookService.getBooks();
+        ArrayList<Book> books = _bookService.get_books();
         request.setAttribute("books", books);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/book_manage.jsp");
         dispatcher.forward(request, response);

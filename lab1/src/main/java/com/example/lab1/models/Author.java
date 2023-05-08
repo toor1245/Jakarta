@@ -1,6 +1,6 @@
-package com.example.lab1.view_models;
+package com.example.lab1.models;
 
-public class AuthorViewModel {
+public class Author {
     private long _id;
     private String _fullName;
 
@@ -20,7 +20,7 @@ public class AuthorViewModel {
         this._fullName = _fullName;
     }
 
-    public AuthorViewModel(int id, String fullName) {
+    public Author(int id, String fullName) {
         this._id = id;
         this._fullName = fullName;
     }

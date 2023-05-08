@@ -2,8 +2,8 @@ package com.example.lab1.commands.book_manage;
 
 import com.example.lab1.commands.ICommand;
 import com.example.lab1.services.BookService;
-import com.example.lab1.view_models.AuthorViewModel;
-import com.example.lab1.view_models.BookViewModel;
+import com.example.lab1.models.Author;
+import com.example.lab1.models.Book;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -25,12 +25,12 @@ public class CreateBookCommand implements ICommand {
         String author = request.getParameter("author");
 
         // Store models into book service
-        AuthorViewModel authorViewModel = new AuthorViewModel(_authorId++, author);
-        BookViewModel bookViewModel = new BookViewModel(title, authorViewModel);
-        _bookService.add(bookViewModel);
+        Author authorViewModel = new Author(_authorId++, author);
+        Book book = new Book(title, authorViewModel);
+        _bookService.add(book);
 
-        // Set books attribute and forward to book manage page
-        request.setAttribute("books", _bookService.getBooks());
+        // Set _books attribute and forward to book manage page
+        request.setAttribute("books", _bookService.get_books());
         request.getRequestDispatcher("/WEB-INF/views/book_manage.jsp").forward(request, response);
     }
 }

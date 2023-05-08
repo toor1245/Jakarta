@@ -1,6 +1,6 @@
-package com.example.lab1.view_models;
+package com.example.lab1.models;
 
-public class StudentViewModel {
+public class Student {
     private String _name;
     private String _imageUrl;
 
@@ -12,7 +12,7 @@ public class StudentViewModel {
         return _imageUrl;
     }
 
-    public StudentViewModel(String name, String imageUrl) {
+    public Student(String name, String imageUrl) {
         _name = name;
         _imageUrl = imageUrl;
     }

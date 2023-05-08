@@ -16,7 +16,7 @@ public class DeleteBookCommand implements ICommand {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         int bookId = Integer.parseInt(request.getParameter("id"));
         _bookService.remove(bookId);
-        request.setAttribute("books", _bookService.getBooks());
+        request.setAttribute("books", _bookService.get_books());
         request.getRequestDispatcher("/WEB-INF/views/book_manage.jsp").forward(request, response);
     }
 }

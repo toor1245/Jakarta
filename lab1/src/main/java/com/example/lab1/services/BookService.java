@@ -1,17 +1,17 @@
 package com.example.lab1.services;
 
-import com.example.lab1.view_models.BookViewModel;
+import com.example.lab1.models.Book;
 import jakarta.ejb.Singleton;
 
 import java.util.ArrayList;
 
 @Singleton
 public class BookService {
-    private static int _id;
-    public static final ArrayList<BookViewModel> books = new ArrayList<>();
+    private int _id;
+    public ArrayList<Book> _books = new ArrayList<>();
 
-    public BookViewModel getById(int id) {
-        for (BookViewModel current : books) {
+    public Book getById(int id) {
+        for (Book current : _books) {
             if (id == current.get_id()) {
                 return current;
             }
@@ -19,22 +19,22 @@ public class BookService {
         return null;
     }
 
-    public void add(BookViewModel book) {
+    public void add(Book book) {
         book.set_id(_id++);
-        books.add(book);
+        _books.add(book);
     }
 
     public void remove(int id) {
-        for (int i = 0; i < books.size(); i++) {
-            if (id == books.get(i).get_id()) {
-                books.remove(i);
+        for (int i = 0; i < _books.size(); i++) {
+            if (id == _books.get(i).get_id()) {
+                _books.remove(i);
                 break;
             }
         }
     }
 
-    public void update(int id, BookViewModel book) {
-        for (BookViewModel current : books) {
+    public void update(int id, Book book) {
+        for (Book current : _books) {
             if (id == current.get_id()) {
                 current.set_title(book.get_title());
                 current.set_author(book.get_author());
@@ -43,22 +43,23 @@ public class BookService {
         }
     }
 
-    public ArrayList<BookViewModel> getBooks() {
-        return books;
+    public ArrayList<Book> get_books() {
+        return _books;
     }
 
-    public BookViewModel findByTitle(String title) {
-        for (BookViewModel current : books) {
+    public ArrayList<Book> findByTitle(String title) {
+        ArrayList<Book> booksByTitle = new ArrayList<>();
+        for (Book current : _books) {
             if (current.get_title().equals(title)) {
-                return current;
+                booksByTitle.add(current);
             }
         }
-        return null;
+        return booksByTitle;
     }
 
-    public ArrayList<BookViewModel> findByKeyword(String keyword) {
-        ArrayList<BookViewModel> booksByKeyword = new ArrayList<>();
-        for (BookViewModel current : books) {
+    public ArrayList<Book> findByKeyword(String keyword) {
+        ArrayList<Book> booksByKeyword = new ArrayList<>();
+        for (Book current : _books) {
             if (current.get_title().contains(keyword)) {
                 booksByKeyword.add(current);
             }
@@ -66,12 +67,13 @@ public class BookService {
         return booksByKeyword;
     }
 
-    public BookViewModel findByAuthor(String author) {
-        for (BookViewModel current : books) {
+    public ArrayList<Book> findByAuthor(String author) {
+        ArrayList<Book> booksByAuthor = new ArrayList<>();
+        for (Book current : _books) {
             if (current.get_author().get_fullName().contains(author)) {
-                return current;
+                booksByAuthor.add(current);
             }
         }
-        return null;
+        return booksByAuthor;
     }
 }
